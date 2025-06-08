@@ -4,14 +4,14 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 :root {
-    --Purple-100: hsl(254, 88%, 90%);
-    --Purple-500: hsl(256, 67%, 59%);
+  --Purple-100: hsl(254, 88%, 90%);
+  --Purple-500: hsl(256, 67%, 59%);
 
-    --Yellow-100: hsl(31, 66%, 93%);
-    --Yellow-500: hsl(39, 100%, 71%);
+  --Yellow-100: hsl(31, 66%, 93%);
+  --Yellow-500: hsl(39, 100%, 71%);
 
-    --White: hsl(0, 0%, 100%);
-    --Black: hsl(0, 0%, 7%);
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 7%);
 }
 
 /*-----------------------------------*\
@@ -21,20 +21,226 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: DM Sans, sans-serif;
-    font-size: clamp(1rem, 0.5rem + 1.5vw, 2rem)
+  font-family: DM Sans, sans-serif;
+  font-size: clamp(1rem, 0.5rem + 1.5vw, 2rem)
+}
+
+img { 
+  width: 30%; 
+  cursor: pointer;
 }
 
 
 /*-----------------------------------*\
   #BENTO LAYOUT
 \*-----------------------------------*/
+main {
+  display: grid;
+  gap: 1.5em;
+  /* margin: 1.2em; */
+  margin: 2em auto;
+}
+@media screen and (max-width: 590px) {
+  main {
+  width: 85%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  main { 
+    width: 60%;   
+    
+  }
+}
+
+section {
+  border-radius: 10px;
+  padding: 2em;
+}
+
+/*-----------------------------------*\
+  #SECTION RATINGS SECTION
+\*-----------------------------------*/
+.social-ratings {
+  background-color: var(--Purple-500);
+  text-align: center;
+  color: var(--White);
+}
+
+.social-ratings > h1 {
+  font-size: 2.2em;
+  font-weight: 500;
+}
+
+.yellow-text { 
+  color: var(--Yellow-500);
+  margin-right: 5px;
+  font-weight: 600;
+}
+
+.ratings-img {
+  margin: 1.3em auto 0.5em;
+  width: 55%;
+}
+
+.social-ratings > p {
+  font-weight: 200;
+  font-size: 0.89em;
+  letter-spacing: 0.8px;
+}
+
+/*-----------------------------------*\
+  #MY ACCOUNTS SECTION
+\*-----------------------------------*/
+.my-accounts {
+  background-color: var(--White);
+  padding: 1.5em 0.8em;
+  display: grid;
+  gap: 0.5em;
+  place-content: center;
+  box-shadow: -4px 0px 10px -2px var(--Purple-100);
+}
+
+.accounts-container img {
+  width: 100%;
+}
+
+.my-accounts > h2 { font-weight: 400; }
+
+/*-----------------------------------*\
+  #SCHEDULE SECTION
+\*-----------------------------------*/
+.schedule {
+  background-color: var(--Yellow-500);
+  padding: 1em 1em 0;
+}
+
+.schedule > h2 {
+  font-size: 1.6em;
+  margin: 1em 0;
+}
+
+.schedule-img { 
+  width: 80%;
+  margin-bottom: -5px;
+}
+
+/*-----------------------------------*\
+  #SOCIAL ANALYTICS SECTION
+\*-----------------------------------*/
+.social-analytics {
+  background-color: var(--Purple-100);
+  display: grid;
+  gap: 1em;
+  text-align: center;
+}
+
+.social-analytics > h2 {
+  font-size: 1.36em;
+  font-weight: 400;
+}
+.analytics-img { 
+  width: 100%; 
+  margin-bottom: -5px;
+}
+
+.social-analytics > p {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+
+/*-----------------------------------*\
+  #FOLLOWER GROWTH SECTION
+\*-----------------------------------*/
+.follower-growth {
+  background-color: var(--Purple-500);
+  display: grid;
+  gap: 1em;
+  padding: 2.5em;
+  color: var(--White);
+}
+
+.follower-growth-img {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  left: 1em;
+}
+
+.follower-growth > h2 {
+  font-weight: 400;
+  font-size: 1.8em;
+  line-height: 0.9em;
+  padding: 5px;
+}
+
+
+/*-----------------------------------*\
+  #AUDIENCE GROWTH SECTION
+\*-----------------------------------*/
+.audience-growth {
+  background-color: var(--White);
+  box-shadow: 2px 5px 5px 3px var(--Purple-100);
+}
+
+
+.audience-growth > h2 {
+  margin-bottom: 1em;
+  font-weight: 300;
+}
+
+.big-text {
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+.audience-img { width: 60%; }
 
 
 
+/*-----------------------------------*\
+  #CREATE A POST SECTION
+\*-----------------------------------*/
+.create-post {
+  background-color: var(--Yellow-100);
+  display: grid;
+  gap: 0.8em;
+}
+
+.create-post > h2 {
+  font-weight: 400;
+  font-size: 1.7em;
+}
+
+.purple-text {
+  color: var(--Purple-500);
+  font-weight: 600;
+}
+
+.create-post-img {
+  width: 55%;
+  margin-left: -7px;
+}
+
+/*-----------------------------------*\
+  #CONTENT USING AI
+\*-----------------------------------*/
+.content-using-ai {
+  background-color: var(--Yellow-500);
+}
+
+.content-using-ai > h2 {
+  margin-bottom: 1em;
+  font-weight: 400;
+  font-size: 1.8em;
+}
+
+.ai-generated-img { width: 100%; }
