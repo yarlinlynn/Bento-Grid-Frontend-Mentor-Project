@@ -36,16 +36,50 @@ img {
   cursor: pointer;
 }
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 
 /*-----------------------------------*\
   #BENTO LAYOUT
 \*-----------------------------------*/
-main {
+.bento-layout {
   display: grid;
   gap: 1.5em;
-  /* margin: 1.2em; */
-  margin: 2em auto;
+  margin: 1.2em; 
+  margin: 2em auto; 
+} 
+
+section {
+  border-radius: 10px;
+  padding: 2em;
 }
+
+
+/* @media (max-width: 768px) {
+  .bento-layout {
+    grid-template-areas: none;
+    grid-template-columns: 1fr;
+  }
+
+  .bento-layout > section {
+    grid-area: unset;
+  }
+} */
+/*.
+/*
+
 @media screen and (max-width: 590px) {
   main {
   width: 85%;
@@ -58,11 +92,61 @@ main {
     
   }
 }
+*/
 
-section {
-  border-radius: 10px;
-  padding: 2em;
+
+
+@media screen and (min-width: 768px) {
+  .bento-layout {
+    display: grid;
+    gap: 1.5rem;
+    width: 90%;
+    grid-template-columns: repeat(8, minmax(0px, 1fr));
+    grid-template-rows: repeat(8, minmax(0px, 0.25fr));
+    grid-template-areas:
+      "create create headline headline headline headline optimize optimize"
+      "create create headline headline headline headline optimize optimize"
+      "create create accounts accounts schedule schedule optimize optimize"
+      "write write accounts accounts schedule schedule optimize optimize"
+      "write write accounts accounts schedule schedule optimize optimize"
+      "write write audience audience followers followers followers followers"
+      "write write audience audience followers followers followers followers"
+      "write write audience audience followers followers followers followers";
+  }
+
+  .social-ratings {
+  grid-area: headline;
+  }
+
+  .my-accounts {
+    grid-area: accounts;
+  }
+
+  .schedule {
+    grid-area: schedule;
+  }
+
+  .social-analytics {
+    grid-area: optimize;
+  }
+
+  .follower-growth {
+    grid-area: followers;
+  }
+
+  .audience-growth {
+    grid-area: audience;
+  }
+
+  .create-post {
+    grid-area: create;
+  }
+
+  .content-using-ai {
+    grid-area: write;
+  }
 }
+
 
 /*-----------------------------------*\
   #SECTION RATINGS SECTION
@@ -244,3 +328,9 @@ section {
 }
 
 .ai-generated-img { width: 100%; }
+
+
+.attribution {
+  font-size: 10px;
+  text-align: center;
+}
