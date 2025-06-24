@@ -50,14 +50,13 @@ img {
   top: 0;
 }
 
-
 /*-----------------------------------*\
   #BENTO LAYOUT
 \*-----------------------------------*/
 .bento-layout {
   display: grid;
   gap: 1.5em;
-  margin: 1.2em; 
+  max-width: 19rem; 
   margin: 2em auto; 
 } 
 
@@ -65,88 +64,6 @@ section {
   border-radius: 10px;
   padding: 2em;
 }
-
-
-/* @media (max-width: 768px) {
-  .bento-layout {
-    grid-template-areas: none;
-    grid-template-columns: 1fr;
-  }
-
-  .bento-layout > section {
-    grid-area: unset;
-  }
-} */
-/*.
-/*
-
-@media screen and (max-width: 590px) {
-  main {
-  width: 85%;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  main { 
-    width: 60%;   
-    
-  }
-}
-*/
-
-
-
-@media screen and (min-width: 768px) {
-  .bento-layout {
-    display: grid;
-    gap: 1.5rem;
-    width: 90%;
-    grid-template-columns: repeat(8, minmax(0px, 1fr));
-    grid-template-rows: repeat(8, minmax(0px, 0.25fr));
-    grid-template-areas:
-      "create create headline headline headline headline optimize optimize"
-      "create create headline headline headline headline optimize optimize"
-      "create create accounts accounts schedule schedule optimize optimize"
-      "write write accounts accounts schedule schedule optimize optimize"
-      "write write accounts accounts schedule schedule optimize optimize"
-      "write write audience audience followers followers followers followers"
-      "write write audience audience followers followers followers followers"
-      "write write audience audience followers followers followers followers";
-  }
-
-  .social-ratings {
-  grid-area: headline;
-  }
-
-  .my-accounts {
-    grid-area: accounts;
-  }
-
-  .schedule {
-    grid-area: schedule;
-  }
-
-  .social-analytics {
-    grid-area: optimize;
-  }
-
-  .follower-growth {
-    grid-area: followers;
-  }
-
-  .audience-growth {
-    grid-area: audience;
-  }
-
-  .create-post {
-    grid-area: create;
-  }
-
-  .content-using-ai {
-    grid-area: write;
-  }
-}
-
 
 /*-----------------------------------*\
   #SECTION RATINGS SECTION
@@ -183,24 +100,31 @@ section {
   #MY ACCOUNTS SECTION
 \*-----------------------------------*/
 .my-accounts {
+  background-image: url(/assets/images/illustration-multiple-platforms.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0 1rem;
   background-color: var(--White);
   padding: 1.5em 0.8em;
-  display: grid;
   gap: 0.5em;
-  place-content: center;
   box-shadow: -4px 0px 10px -2px var(--Purple-100);
 }
 
-.accounts-container img {
-  width: 100%;
+.my-accounts > h2 { 
+  font-weight: 400;
+  padding-top: 5rem;
 }
-
-.my-accounts > h2 { font-weight: 400; }
 
 /*-----------------------------------*\
   #SCHEDULE SECTION
 \*-----------------------------------*/
 .schedule {
+  background-image: url(/assets/images/illustration-consistent-schedule.webp);
+  background-size: 70%;
+  background-position-x: 1rem;
+  background-position-y: 8rem;
+  height: 40vh;
+  background-repeat: no-repeat;
   background-color: var(--Yellow-500);
   padding: 1em 1em 0;
 }
@@ -219,26 +143,26 @@ section {
   #SOCIAL ANALYTICS SECTION
 \*-----------------------------------*/
 .social-analytics {
+  background-image: url(/assets/images/illustration-schedule-posts.webp);
+  background-size: 80%;
+  background-repeat: no-repeat;
   background-color: var(--Purple-100);
-  display: grid;
-  gap: 1em;
   text-align: center;
+  background-position-x: center;
+  background-position-y: 6.5rem;
+  height: 70vh;
 }
 
 .social-analytics > h2 {
   font-size: 1.36em;
   font-weight: 400;
 }
-.analytics-img { 
-  width: 100%; 
-  margin-bottom: -5px;
-}
 
 .social-analytics > p {
   font-size: 1em;
   font-weight: 400;
+  padding-top: 16rem;
 }
-
 
 /*-----------------------------------*\
   #FOLLOWER GROWTH SECTION
@@ -265,7 +189,6 @@ section {
   padding: 5px;
 }
 
-
 /*-----------------------------------*\
   #AUDIENCE GROWTH SECTION
 \*-----------------------------------*/
@@ -287,8 +210,6 @@ section {
 }
 
 .audience-img { width: 60%; }
-
-
 
 /*-----------------------------------*\
   #CREATE A POST SECTION
@@ -323,7 +244,7 @@ section {
 
 .content-using-ai > h2 {
   margin-bottom: 1em;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.8em;
 }
 
@@ -333,4 +254,154 @@ section {
 .attribution {
   font-size: 10px;
   text-align: center;
+}
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+@media screen and (min-width: 1000px) {
+  body { height: 100%; }
+
+  main { height: 90vh; } 
+
+  section {
+    padding: 1.5em;
+  }
+
+  .bento-layout {
+    display: grid;
+    gap: 1rem;
+    max-width: 40rem;
+    margin: 1em auto;
+    grid-template-columns: repeat(8, minmax(0px, 1fr));
+    grid-template-rows: repeat(9, minmax(0px, 1fr));
+    grid-template-areas:
+      "create create headline headline headline headline optimize optimize"
+      "create create headline headline headline headline optimize optimize"
+      "create create accounts accounts schedule schedule optimize optimize"
+      "write write accounts accounts schedule schedule optimize optimize"
+      "write write accounts accounts schedule schedule optimize optimize"
+      "write write audience audience followers followers followers followers"
+      "write write audience audience followers followers followers followers"
+      "write write audience audience followers followers followers followers";
+  }
+
+  .social-ratings {
+    grid-area: headline;
+    padding: 0.8rem 2rem;
+    grid-row: 1 / 4;
+  }
+
+  .social-ratings > h1 { font-size: 1.5rem; }
+
+  .ratings-img { 
+    width: 40%;
+    margin: 0.4rem auto 0;
+  }
+
+  .social-ratings > p { 
+    font-size: 0.6rem;
+    padding-bottom: -5px;
+  }
+
+  .my-accounts {
+    grid-area: accounts;
+    background-size: 160%;
+    grid-row: 4 / 7;
+    background-position: 0 0.5rem;
+  }
+
+  .my-accounts > h2 {
+    padding-top: 2.5rem;
+    font-size: 0.9rem;
+  }
+
+  .schedule {
+    grid-area: schedule;
+    height: auto;
+    grid-row: 4 / 7;
+    background-position-y: 150%;
+    padding: 1rem 1rem 0;
+  }
+
+  .schedule > h2 {
+    font-size: 0.83rem;
+    margin: 0;
+  }
+
+  .social-analytics {
+    grid-area: optimize;
+    grid-row: 1 / 7;
+    background-position-x: 1rem;
+    background-size: 95%;
+    background-position-y: 50%;
+    height: auto;
+    padding: 1rem 1rem 1rem;
+  }
+
+  .social-analytics > h2 { font-size: 1.2rem; }
+
+  .social-analytics > p {
+    padding-top: 9rem;
+    font-size: 0.6rem;
+  }
+
+  .follower-growth {
+    grid-area: followers;
+    grid-row: 7 / 10;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+    place-content: center;
+    align-items: center;
+  }
+
+  .follower-growth-img { 
+    left: 0; 
+    width: 95%;
+  }
+
+  .follower-growth > h2 { font-size: 1.3rem; }
+
+  .audience-growth {
+    grid-area: audience;
+    grid-row: 7 / 10;
+    padding: 0.7rem 1.5rem;
+  }
+
+  .audience-growth > h2 { font-size: 0.7rem; }
+
+  .audience-img {
+    width: 90%;
+  }
+
+  .create-post {
+    grid-area: create;
+    grid-row: 1 / 5;
+  }
+
+  .create-post > h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .create-post-img { width: 70%; }
+
+  .content-using-ai {
+    grid-area: write;
+    grid-row: 5 / 10;
+    padding: 1rem 1.3rem;
+  }
+
+  .content-using-ai > h2 { 
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+  }
+
+  /* .ai-generated-img {
+    width: 130%;
+    position: relative;
+    right: 25px;
+  } */
+
 }
